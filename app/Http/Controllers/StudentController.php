@@ -14,8 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        // return(new student())->paginate();
-        return student::all();
+        return(new student())->paginate();
+        // return student::all();
     }
 
     /**
@@ -44,6 +44,14 @@ class StudentController extends Controller
 
         ]);
         
+        $student=new student();
+        $student->name=$request->name;
+        $student->career=$request->career;
+        $student->email=$request->email;
+        $student->password=$request->password;
+        $student->save();
+            // $student->save($request->only('name','career','email','password'));
+        return $student;
     }
 
     /**

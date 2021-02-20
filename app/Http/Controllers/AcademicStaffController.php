@@ -14,7 +14,7 @@ class AcademicStaffController extends Controller
      */
     public function index()
     {
-        //
+        return academicStaff::all();
     }
 
     /**
@@ -35,7 +35,9 @@ class AcademicStaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     ''
+        // ])
     }
 
     /**

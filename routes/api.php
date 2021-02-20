@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\StudentController;
-use app\Http\Controllers\Academic_staffController;
+use App\Http\Controllers\AcademicStaffController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/student',[StudentController::class,'index']);
- Route::get('/academicStaff',[Academic_staffControllerController::class,'index']);
+Route::post('/CreateStudents',[StudentController::class,'store']);
+Route::get('/academicStaff',[AcademicStaffController::class,'index']);
+Route::post('/academicStaff',[AcademicStaffController::class,'store']);
 Route::get('/greeting', function () {
     $name="Galmy Louis";
     
